@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "description": "A bladecn registry of components, etc.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "schemas/registry-item.json#"
+      }
+    }
+  },
+  "required": ["name", "version", "last_updated", "items"],
+  "uniqueItems": true,
+  "minItems": 1
+}
