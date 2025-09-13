@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://blade-cn.github.io/bladecn-schema/registry-item.json",
   "type": "object",
   "properties": {
     "name": {
@@ -7,7 +8,7 @@
     },
     "type": {
       "type": "string",
-      "enum": ["component", "plugin", "theme"]
+      "enum": ["block", "component", "page", "ui"]
     },
     "description": {
       "type": "string"
@@ -18,6 +19,9 @@
         "type": "string"
       },
       "uniqueItems": true
+    },
+    "version": {
+      "type": "string"
     },
     "nodeDependencies": {
       "type": "object",
@@ -48,15 +52,15 @@
       }
     },
     "cssVars": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "patternProperties": {
-          "^--[a-zA-Z0-9-_]+$": { "type": "string" }
-        },
-        "additionalProperties": false
-      }
+      "type": "object",
+      "patternProperties": {
+        "^--[a-zA-Z0-9-_]+$": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
-  "required": ["name", "type", "description", "files"]
+  "required": ["name", "type", "description", "version", "files"]
 }
+

@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://blade-cn.github.io/bladecn-schema/registry.json",
   "description": "A bladecn registry of components, etc.",
   "type": "object",
   "properties": {
@@ -7,7 +8,8 @@
       "type": "string"
     },
     "homepage": {
-      "type": "string"
+      "type": "string",
+      "format": "uri"
     },
     "authors": {
       "type": "array",
@@ -18,13 +20,10 @@
     "description": {
       "type": "string"
     },
-    "owner": {
-      "type": "string"
-    },
     "version": {
       "type": "string"
     },
-    "last_updated": {
+    "lastUpdated": {
       "type": "string",
       "format": "date-time"
     },
@@ -35,7 +34,5 @@
       }
     }
   },
-  "required": ["name", "version", "last_updated", "items"],
-  "uniqueItems": true,
-  "minItems": 1
+  "required": ["name", "homepage", "description", "authors", "version", "lastUpdated", "items"]
 }
