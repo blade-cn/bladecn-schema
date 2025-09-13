@@ -6,10 +6,6 @@
     "name": {
       "type": "string"
     },
-    "type": {
-      "type": "string",
-      "enum": ["block", "component", "page", "ui"]
-    },
     "description": {
       "type": "string"
     },
@@ -45,7 +41,7 @@
           },
           "type": {
             "type": "string",
-            "enum": ["component", "style"]
+            "enum": ["block", "component", "page", "ui"]
           }
         },
         "required": ["path", "type"]
@@ -63,4 +59,3 @@
   },
   "required": ["name", "type", "description", "version", "files"]
 }
-
